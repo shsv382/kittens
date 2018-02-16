@@ -2,6 +2,17 @@
 <html>
   <head>
     <title>Kittens</title>
+    <style>
+    	.success {
+    		color: #050;
+    		background-color: #9f9;
+    	}
+
+    	.error {
+    		color: #500;
+    		background-color: #f99;
+    	}
+    </style>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +20,13 @@
   </head>
 
   <body>
+  	<% flash.each do |key, value| %>
+
+  		<div class="<%= key %>">
+  			<%= value %>
+  		</div>
+
+  	<% end %>
     <%= yield %>
   </body>
 </html>

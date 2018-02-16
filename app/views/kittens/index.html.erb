@@ -1,0 +1,6 @@
+Here is <b>Kittens#index</b>! <%= link_to "New kitten", new_kitten_path %>
+<ul>
+	<% @kittens.each do |kitten| %>
+			<%= render kitten %>
+	<% end %>
+</ul>
